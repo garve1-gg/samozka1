@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/aboutus.css">
-  <link rel="stylesheet" href="jq/aboutus.css">
+  <link rel="stylesheet" href="jq/aboutus.cs">
+  <link rel="icon" href="img/icon.png" type="icon">
   <title>Samoobslužný obchůdek</title>
 </head>
 <body>
@@ -131,22 +132,25 @@
 
 <!--FUNKCNOST-->
 <section class="section" id="jak-funguje">
-  <h2>Jak to funguje</h2>
-  <div class="how-it-works">
-    <div class="step"><img src="abim/num/one.png" alt="" class="how-img">1. Načti QR kód na vstupních dveřích</div>
-    <div class="step"><img src="abim/num/two.png" alt="" class="how-img">2. Stáhni si aplikaci</div>
-    <div class="step"><img src="abim/num/three.png" alt="" class="how-img">3. Přihlaš se do aplikace a vyplň své údaje ( Přístup do prodejny verifikován na základě Bankovní identity, OP, nebo tel. čísla )</div>
-    <div class="step"><img src="abim/num/four.png" alt="" class="how-img">4. Poté dostaneš přístupový QR kód</div>
-    <div class="step"><img src="abim/num/five.png" alt="" class="how-img">5. Načti QR kód a elektronický zámek otevře dveře do prodejny</div>
-    <div class="step"><img src="abim/num/six.png" alt="" class="how-img">6. Začni nakupovat</div>
-    <div class="step"><img src="abim/num/seven.png" alt="" class="how-img">7. Po dokončení nákupu navštiv platební Kiosek a načti postupně všechny nakoupené položky</div>
-    <div class="step"><img src="abim/num/eight.png" alt="" class="how-img">8. Proveď platbu platební kartou, mobilem nebo NFC kartou</div>
+  <h2 class="funkcnost-h2">Jak to funguje</h2>
+  <div class="how-toggle-container">
+    <button class="how-toggle-btn" onclick="toggleHow()">+ více</button>
+  </div>
+  <div class="how-it-works how-content hidden-on-mobile">
+    <div class="step"><img src="abim/num/one.png" alt="" class="step-img">Načti QR kód na vstupních dveřích</div>
+    <div class="step"><img src="abim/num/two.png" alt="" class="step-img">Stáhni si aplikaci</div>
+    <div class="step"><img src="abim/num/three.png" alt="" class="step-img">Přihlaš se do aplikace</div>
+    <div class="step"><img src="abim/num/four.png" alt="" class="step-img">Dostaneš přístupový QR kód</div>
+    <div class="step"><img src="abim/num/five.png" alt="" class="step-img">Načti QR kód</div>
+    <div class="step"><img src="abim/num/six.png" alt="" class="step-img">Začni nakupovat</div>
+    <div class="step"><img src="abim/num/seven.png" alt="" class="step-img">Po nákupu načti všechny položky v Kiosku</div>
+    <div class="step"><img src="abim/num/eight.png" alt="" class="step-img">Proveď platbu platební kartou, mobilem nebo NFC kartou</div>
   </div>
 </section>
 
 <!--KONTAKT-->
 <section class="section" id="kontakt">
-  <h2>Kontaktujte nás</h2>
+  <h2>Kontakt</h2>
     <p>Vyzkoušejte si náš obchůdek osobně přímo v Čavisově<br>
     Pokud nás chcete kontaktovat, použijte formulář, nebo rovnou napište na náš email <strong>info@samozka.cz</strong><br>
     nebo na telefonu <strong>Tel: 732 516 165</strong></p>
@@ -268,6 +272,29 @@
     reasonsWrapper.classList.toggle('show', reasonsVisible);
     toggleBtn.textContent = reasonsVisible ? '- méně důvodů' : '+ více důvodů';
   });
+
+  function toggleHow() {
+    const content = document.querySelector('.how-content');
+    const button = document.querySelector('.how-toggle-btn');
+
+    if (window.innerWidth <= 510) {
+      content.classList.toggle('hidden-on-mobile');
+      button.textContent = content.classList.contains('hidden-on-mobile') ? '+ více' : '− méně';
+    }
+  }
+
+  // Zobrazit/skrýt tlačítko pro mobil
+  function setupToggleVisibility() {
+    const toggleContainer = document.querySelector('.how-toggle-container');
+    if (window.innerWidth <= 510) {
+      toggleContainer.style.display = 'block';
+    } else {
+      toggleContainer.style.display = 'none';
+    }
+  }
+
+  window.addEventListener('resize', setupToggleVisibility);
+  window.addEventListener('DOMContentLoaded', setupToggleVisibility);
 </script>
 
 </body>
