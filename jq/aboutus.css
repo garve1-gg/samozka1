@@ -97,3 +97,13 @@
     display: grid !important;
   }
 }
+
+@media (max-width: 678px) {
+  .vizualizace-h2,
+  .nabidka-h1,
+  .reason-h2,
+  .presentation-h2,
+  .funkcnost-h2 {
+    font-size: 55px !important;
+  }
+}
