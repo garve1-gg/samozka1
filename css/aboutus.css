@@ -8,7 +8,7 @@
 }
 
 body {
-  background: linear-gradient(135deg, rgb(0, 0, 0, 0.4), #f18c20);
+  background: linear-gradient(135deg, #e3b575, #a8642c);
   color: #333;
 }
 
@@ -459,23 +459,6 @@ td:nth-child(3) {
   object-fit: contain;
   margin-right: 1rem;
   flex-shrink: 0;
-}
-
-.how-toggle-container {
-  display: none;
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.how-toggle-btn {
-  background: #e3b575;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 10px;
-  font-weight: bold;
-  font-size: 1.1rem;
-  cursor: pointer;
-  box-shadow: 0 2px 5px #000;
 }
 
 /** KONTAKT **/
