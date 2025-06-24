@@ -68,6 +68,16 @@
   #reasonsWrapper.show {
     display: block;
   }
+
+  .how-toggle-container {
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+  }
+
+  .how-content.hidden-on-mobile {
+    display: none;
+  }
 }
 
 @media (min-width: 511px) {
@@ -77,5 +87,13 @@
 
   #reasonsWrapper {
     display: block !important;
+  }
+
+  .how-toggle-container {
+    display: none !important;
+  }
+
+  .how-content {
+    display: grid !important;
   }
 }
