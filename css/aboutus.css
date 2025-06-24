@@ -147,6 +147,10 @@ h1, h2, h3 {
 }
 
 /** VIZUALIZACE **/
+#vizualizace{
+  background: linear-gradient(135deg, rgb(0, 0, 0, 0.4), #f18c20);
+}
+
 .vizualizace-h2{
   padding: 20px;
   margin-bottom: 15px;
@@ -404,6 +408,10 @@ td:nth-child(3) {
 }
 
 /** JAK TO FUNGUJE **/
+#jak-funguje{
+  background: linear-gradient(135deg, #e3b575, #a8642c);
+}
+
 .funkcnost-h2 {
   padding: 20px;
   margin-bottom: 15px;
