@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Úvod</title>
+  <style>
+    body {
+      margin: 0;
+      background: url('img/back1.jpg') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    body::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.4); /* ztmavení */
+      z-index: 0;
+    }
+
+    .bubble-container {
+      display: flex;
+      gap: 150px;
+      z-index: 1;
+    }
+
+    .bubble {
+      background: rgba(255, 255, 255, 0.35);
+      border: 1px solid rgb(255, 255, 255, 0.4);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px); /* pro Safari */
+      border-radius: 60px;
+      padding: 15px 30px;
+      font-family: 'Poppins', sans-serif;
+      width: 230px;
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      transition: all 0.3s ease;
+      flex-direction: row;
+    }
+
+    .bubble:hover{
+      background: rgba(255, 255, 255, 0.25);
+      transform: scale(1.05);
+    }
+
+    .AboutUsIcon, .SortimentIcon{
+      width: 40px;
+      margin-right: 10px;
+    }
+
+    /* Icon change */
+
+    .bubble:hover .AboutUsIcon{
+      content: url('img/aboutF.png');
+    }
+
+    .bubble:hover .SortimentIcon{
+      content: url('img/sortimentF.png');
+    }
+
+
+    /* Navigace */
+    .navbar {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5); /* tmavé průhledné pozadí */
+      border-radius: 0px 0px 30px 30px;
+      padding: 12px 0;
+      padding-bottom: 16px;
+      position: fixed;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-logo {
+      height: 43px;
+      object-fit: contain;
+    }
+
+    @media (max-width: 600px) {
+      .bubble-container {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .bubble {
+        width: 180px;
+        height: 120px;
+        font-size: 22px;
+      }
+
+      .navbar{
+        height: -30%;
+      }
+
+      .nav-logo{
+        height: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html">
+          <img src="img/Wlogo2.png" alt="Logo" class="nav-logo">
+        </a>
+      </div>
+    </nav>
+
+  <div class="bubble-container">
+    <a class="bubble" href="aboutus.html">
+      <img src="img/about.png" alt="AboutUs" class="AboutUsIcon">
+      O nás
+    </a>
+
+    <a class="bubble" href="sortiment.html">
+      <img src="img/sortiment.png" alt="Sortiment" class="SortimentIcon">
+      Sortiment
+    </a>
+  </div>
+
+</body>
+</html>

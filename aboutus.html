@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/aboutus.css">
+  <link rel="stylesheet" href="jq/aboutus.css">
+  <title>Samoobslužný obchůdek</title>
+</head>
+<body>
+<!--NAVIGACE-->
+<nav class="navbar">
+  <a href="index.html">
+    <img src="img/Wlogo2.png" alt="Logo" class="nav-logo">
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#o-nas">Úvod</a>
+    <a href="#vizualizace">Vizualizace</a>
+    <a href="#nabidka">Projekt</a>
+    <a href="#duvody">Proč sámožku</a>
+    <a href="#presentation">Prezentace</a>
+    <a href="#jak-funguje">Jak to funguje</a>
+    <a href="#kontakt">Kontakt</a>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()">
+    <img id="menuIcon" src="abim/menu/burger.png" alt="Menu">
+  </button>
+</nav>
+
+<!--POPIS-->
+<section class="hero" id="o-nas">
+  <img src="abim/full_logo.png" alt="" class="hero-logo">
+  <div class="hero-text">
+    <h2 class="hero-undertext">Samoobslužný obchod, který je otevřený pořád.</h2>
+    <p class="hero-p">Přinášíme první samoobslužný obchod v podobě ekologické dřevostavby – otevřený 24/7. Nabízí jak základní sortiment, tak speciální výrobky dostupné pouze online. Zaměřujeme se i na eko potraviny a farmářské produkty.
+                      Máte zajímavý výrobek? <a href="#kontakt" style="text-decoration: none;"><strong>Dejte nám vědět tady</strong></a>.
+                      Tuto prodejnu můžete mít i u vás na obci nebo soukromém pozemku – skvělá služba pro vás i vaše sousedy. Chcete prezentaci s více informacemi? Vyplňte formulář <a href="#kontakt" style="text-decoration: none;"><strong>zde</strong></a> a pošleme vám ji.</p>
+  </div>
+</section>
+
+<!--VIZUALIZACE-->
+<section class="section" id="vizualizace">
+  <h2 class="vizualizace-h2">Vizualizace</h2>
+  <div class="gallery">
+    <div class="gallery-spacer"></div> <!-- Falešný prvek pro odsazení -->
+    <img src="abim/vizualizace/foto1.jpg" onclick="openLightbox(this.src)" class="gal galx galr">
+    <img src="abim/vizualizace/foto2.jpg" onclick="openLightbox(this.src)" class="gal">
+    <img src="abim/vizualizace/foto3.jpg" onclick="openLightbox(this.src)" class="gal">
+    <img src="abim/vizualizace/foto4.jpg" onclick="openLightbox(this.src)" class="gal">
+    <img src="abim/vizualizace/foto5.jpg" onclick="openLightbox(this.src)" class="gal">
+    <img src="abim/vizualizace/foto6.jpg" onclick="openLightbox(this.src)" class="gal galy galr">
+    <div class="gallery-spacer"></div> <!-- Falešný prvek na konci -->
+  </div>
+</section>
+
+<!--PROJEKT-->
+<h1 class="nabidka-h1">Projekt</h1>
+<section class="section" id="nabidka">  
+  <p class="nabidka-p">Tento projekt je výjimečný tím, že jde o čistě dřevostavbu z ekologických a zdravotně nezávadných materiálů. Všechny stavby mají nízkoenergetický štítek a výrazně nižší spotřebu energie než běžné kontejnery nebo stavby z PUR panelů. Každá stavba se vyrábí na míru podle přání zákazníka, nebo si může vybrat z 3 základních velikostí.</p>
+  <h3 class="nabidka-h3">Nabízíme tři velikosti:</h3>
+  <ul class="nabidka-ul">
+    <li class="nabidka-li"><strong>Small 4.0 x 3.2m</strong><div class="small"></div></li>
+    <li class="nabidka-li"><strong>Large 6.0 x 3.2m</strong><div class="large"></div></li>
+    <li class="nabidka-li"><strong>XL 10.0 x 3.2m</strong><div class="xl"></div></li>
+  </ul>
+  <div class="table-section">
+    <p class="tabulka-p1">Naše měsíční náklady jsou oproti standardnímu obchodu zanedbatelné !!!</p>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th class="nabidka-th-text nabidka-th-text-center">Náklady standartní prodejny 20m²</th>
+          <th class="nabidka-th-text nabidka-th-text-right">Náklady Sámožka 20m²</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Energie</td><td>5 500 Kč</td><td>1 800 Kč</td></tr>
+        <tr><td>Zaměstnanec</td><td>28 000 Kč</td><td>0 Kč</td></tr>
+        <tr><td>Údržba</td><td>5 400 Kč</td><td>1 500 Kč</td></tr>
+        <tr><td>Aktualizace a školení</td><td>3 000 Kč</td><td>500 Kč</td></tr>
+        <tr><td>Osobní výdaje</td><td>1 500 Kč</td><td>500 Kč</td></tr>
+        <tr><td>Ostatní výdaje</td><td>5 000 Kč</td><td>7 000 Kč</td></tr>
+        <tr><td><strong>Celkem</strong></td><td><strong>43 400 Kč</strong></td><td><strong>4 500 Kč</strong></td></tr>
+      </tbody>
+    </table>
+    <p class="tabulka-p2">Průměrný měsíční výpočet nákladů během kalendářního roku.</p>
+  </div>
+</section>
+
+<!--DUVODY-->
+<section class="section" id="duvody">
+  <h2 class="reason-h2">Proč právě Sámožka?</h2>
+  <!-- Tlačítko nad -->
+  <button id="toggleReasonsBtnTop" class="reason-card toggle-reasons-btn">+ více důvodů</button>
+  <!-- Obal s bublinami -->
+  <div id="reasonsWrapper">
+    <div class="reasons-grid">
+      <div class="reason-card">🕒 Provoz 24/7</div>
+      <div class="reason-card">🔐 Plně zabezpečeno</div>
+      <div class="reason-card">🤖 Automatizace</div>
+      <div class="reason-card">👵👨‍🦰 Jednoduché přihlášení</div>
+      <div class="reason-card">💡 Nízké náklady</div>
+      <div class="reason-card">⚡ Rychlá instalace</div>
+      <div class="reason-card">📏 Bez stavebního povolení</div>
+      <div class="reason-card">🏡 Udržitelný design</div>
+      <div class="reason-card">💸 Rychlá návratnost</div>
+      <div class="reason-card">🚛 Mobilní</div>
+      <div class="reason-card">♻️ Recyklovatelné materiály</div>
+      <div class="reason-card">🛡️ Moderní technologie</div>
+    </div>
+  </div>
+
+  <div class="reasons-text">
+    <p>Pro děti a důchodce máme vyvinutý věrnostní program s přístupovými kartami. Dále máme připravený vstup přes kreditní platební karty, e-občanku atd…</p>
+  </div>
+</section>
+
+<!--PREZENTACE-->
+<section class="section" id="presentation">
+  <h2 class="presentation-h2">Prezentace</h2>
+  <div class="gallery">
+    <div class="gallery-spacer"></div> <!-- Falešný prvek pro odsazení -->
+    <img src="abim/foto/real1.jpg" alt="Reálná foto 1" onclick="openLightbox(this.src)" class="gal galx">
+    <img src="abim/foto/real2.jpg" alt="Reálná foto 2" onclick="openLightbox(this.src)" class="gal">
+    <img src="abim/foto/real3.jpg" alt="Reálná foto 3" onclick="openLightbox(this.src)" class="gal">
+    <img src="abim/foto/real4.jpg" alt="Reálná foto 4" onclick="openLightbox(this.src)" class="gal">
+    <img src="abim/foto/real5.jpg" alt="Reálná foto 5" onclick="openLightbox(this.src)" class="gal galy">
+    <div class="gallery-spacer"></div> <!-- Falešný prvek na konci -->
+  </div>
+</section>
+
+<!--FUNKCNOST-->
+<section class="section" id="jak-funguje">
+  <h2>Jak to funguje</h2>
+  <div class="how-it-works">
+    <div class="step"><img src="abim/num/one.png" alt="" class="how-img">1. Načti QR kód na vstupních dveřích</div>
+    <div class="step"><img src="abim/num/two.png" alt="" class="how-img">2. Stáhni si aplikaci</div>
+    <div class="step"><img src="abim/num/three.png" alt="" class="how-img">3. Přihlaš se do aplikace a vyplň své údaje ( Přístup do prodejny verifikován na základě Bankovní identity, OP, nebo tel. čísla )</div>
+    <div class="step"><img src="abim/num/four.png" alt="" class="how-img">4. Poté dostaneš přístupový QR kód</div>
+    <div class="step"><img src="abim/num/five.png" alt="" class="how-img">5. Načti QR kód a elektronický zámek otevře dveře do prodejny</div>
+    <div class="step"><img src="abim/num/six.png" alt="" class="how-img">6. Začni nakupovat</div>
+    <div class="step"><img src="abim/num/seven.png" alt="" class="how-img">7. Po dokončení nákupu navštiv platební Kiosek a načti postupně všechny nakoupené položky</div>
+    <div class="step"><img src="abim/num/eight.png" alt="" class="how-img">8. Proveď platbu platební kartou, mobilem nebo NFC kartou</div>
+  </div>
+</section>
+
+<!--KONTAKT-->
+<section class="section" id="kontakt">
+  <h2>Kontaktujte nás</h2>
+    <p>Vyzkoušejte si náš obchůdek osobně přímo v Čavisově<br>
+    Pokud nás chcete kontaktovat, použijte formulář, nebo rovnou napište na náš email <strong>info@samozka.cz</strong><br>
+    nebo na telefonu <strong>Tel: 732 516 165</strong></p>
+  <div class="contact">
+    <form>
+      <input type="text" placeholder="Jméno" required>
+      <input type="email" placeholder="E-mail" required>
+      <textarea rows="5" placeholder="Vaše zpráva"></textarea>
+      <button type="submit">Odeslat</button>
+    </form>
+    <div id="map">
+      <p>Mapa s body umístění obchůdků zde.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Samožka. Všechna práva vyhrazena.</p>
+</footer>
+
+<script>
+  const navLinks = document.getElementById('navLinks');
+  const menuIcon = document.getElementById('menuIcon');
+  let open = false;
+
+  function toggleMenu() {
+    open = !open;
+    navLinks.classList.toggle('active');
+    menuIcon.src = open ? 'abim/menu/cross.png' : 'abim/menu/burger.png';
+  }
+
+  let currentImageIndex = 0;
+  let currentImages = [];
+
+  function openLightbox(src) {
+    // Najdi všechny obrázky v sekci galerie, kde byl kliknutý obrázek
+    const galleries = document.querySelectorAll('.gallery');
+    galleries.forEach(gallery => {
+      if ([...gallery.querySelectorAll('img')].some(img => img.src === src)) {
+        currentImages = [...gallery.querySelectorAll('img')].map(img => img.src);
+      }
+    });
+
+    currentImageIndex = currentImages.indexOf(src);
+
+    const viewer = document.createElement('div');
+    viewer.id = 'lightboxViewer';
+    viewer.style.position = 'fixed';
+    viewer.style.top = '0';
+    viewer.style.left = '0';
+    viewer.style.width = '100vw';
+    viewer.style.height = '100vh';
+    viewer.style.background = 'rgba(0,0,0,0.8)';
+    viewer.style.display = 'flex';
+    viewer.style.alignItems = 'center';
+    viewer.style.justifyContent = 'center';
+    viewer.style.zIndex = '10000';
+
+    const img = document.createElement('img');
+    img.id = 'lightboxImage';
+    img.src = src;
+    img.style.maxWidth = '90%';
+    img.style.maxHeight = '90%';
+    img.style.borderRadius = '12px';
+
+    const closeBtn = document.createElement('span');
+    closeBtn.innerText = '✖';
+    closeBtn.style.position = 'absolute';
+    closeBtn.style.top = '20px';
+    closeBtn.style.right = '30px';
+    closeBtn.style.color = 'white';
+    closeBtn.style.fontSize = '2rem';
+    closeBtn.style.cursor = 'pointer';
+    closeBtn.onclick = () => viewer.remove();
+
+    const prevBtn = document.createElement('img');
+    prevBtn.src = 'abim/menu/arrow_left.png';
+    prevBtn.style.position = 'absolute';
+    prevBtn.style.left = '20px';
+    prevBtn.style.width = '40px';
+    prevBtn.style.cursor = 'pointer';
+    prevBtn.onclick = showPrevImage;
+
+    const nextBtn = document.createElement('img');
+    nextBtn.src = 'abim/menu/arrow_right.png';
+    nextBtn.style.position = 'absolute';
+    nextBtn.style.right = '20px';
+    nextBtn.style.width = '40px';
+    nextBtn.style.cursor = 'pointer';
+    nextBtn.onclick = showNextImage;
+
+    viewer.appendChild(img);
+    viewer.appendChild(closeBtn);
+    viewer.appendChild(prevBtn);
+    viewer.appendChild(nextBtn);
+    document.body.appendChild(viewer);
+  }
+
+  function showPrevImage() {
+    if (currentImages.length === 0) return;
+    currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+    document.getElementById('lightboxImage').src = currentImages[currentImageIndex];
+  }
+
+  function showNextImage() {
+    if (currentImages.length === 0) return;
+    currentImageIndex = (currentImageIndex + 1) % currentImages.length;
+    document.getElementById('lightboxImage').src = currentImages[currentImageIndex];
+  }
+
+  // Přepínač důvodů
+  const toggleBtn = document.getElementById('toggleReasonsBtnTop');
+  const reasonsWrapper = document.getElementById('reasonsWrapper');
+
+  let reasonsVisible = false;
+
+  toggleBtn.addEventListener('click', () => {
+    reasonsVisible = !reasonsVisible;
+    reasonsWrapper.classList.toggle('show', reasonsVisible);
+    toggleBtn.textContent = reasonsVisible ? '- méně důvodů' : '+ více důvodů';
+  });
+</script>
+
+</body>
+</html>

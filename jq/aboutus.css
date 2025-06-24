@@ -1,0 +1,101 @@
+@media (max-width: 990px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(0,0,0,0.95);
+    flex-direction: column;
+    padding: 1rem 2rem;
+    border-radius: 0 0 0 20px;
+    display: none;
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .navbar {
+    justify-content: space-between;
+    padding-right: 10px;
+    gap: 0;
+  }
+  
+  .nav-logo {
+    height: 30px !important;
+  }
+  
+  .hamburger {
+    position: relative;
+    right: 0;
+    display: block;
+  }  
+  
+  .hero-logo{
+    width: 90%;
+    max-width: 400px;
+    margin-top: 20px;
+  }
+  
+  .nav-links a:hover {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0s ease;
+    font-size: 18px;
+    border-radius: 0;
+    background: none;
+    padding: 0;
+  }
+
+  .gal{
+    width: 70%;
+    max-width:400px;
+  }
+}
+
+/* tlačítko na "vice/mene duvodu" */
+@media (max-width: 510px) {
+  #toggleReasonsBtnTop {
+    display: block;
+    margin: 1rem auto;
+    max-width: 300px;
+  }
+
+  #reasonsWrapper {
+    display: none;
+  }
+
+  #reasonsWrapper.show {
+    display: block;
+  }
+}
+
+@media (min-width: 511px) {
+  #toggleReasonsBtnTop {
+    display: none;
+  }
+
+  #reasonsWrapper {
+    display: block !important;
+  }
+}
+
+
+@media (max-width: 915px){
+  .reasons-text{
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 615px){
+  .reasons-text{
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 415px){
+  .reasons-text{
+    max-width: 200px;
+    font-size: 1rem;
+  }
+}

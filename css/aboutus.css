@@ -1,0 +1,463 @@
+/** CSS STRANKY **/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, rgb(0, 0, 0, 0.4), #f18c20);
+  color: #333;
+}
+
+/** ZAKLADNI NASTAVENI PRO H1 H2 H3 **/
+h1, h2, h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/** NAVIGACE **/
+.navbar {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0 0 30px 30px;
+  padding: 12px 20px 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.nav-logo {
+  height: 43px;
+  object-fit: contain;
+  transition: all 0.2s ease;
+}
+
+.nav-logo:hover {
+  transform: scale(1.1);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.5s ease;
+  font-size: 18px;
+}
+
+.nav-links a:hover {
+  font-size: larger;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(240, 177, 82, 1), rgb(0, 0, 0, 0.5));
+  color: #fff;
+  padding: 10px;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger img {
+  height: 30px;
+}
+
+/** Nastaveni pro sekci hero, nabidka, kontakt **/
+.hero, #nabidka, #kontakt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 1rem 2rem;
+  background: 
+  linear-gradient(rgba(190, 155, 78, 0.5), rgba(0, 0, 0, 0.5)),
+  url('../abim/wood_background.jpg') no-repeat center/cover;
+  color: white;
+}
+
+/** KRATKY POPIS POD NAVIGACI **/
+.hero-undertext{
+  color: #000;
+  font-size: 1.5rem; 
+  margin-top: 30px;
+  margin-bottom: 0;
+  border-radius: 20px 20px 0 0;
+  padding: 20px;
+  background: #e9bf92;
+}
+
+.hero-logo{
+  margin-top: 42px;
+  width: 700px;
+}
+
+.hero-p{
+  color: #000;
+  font-size: 1.2rem; 
+  max-width: 800px; 
+  margin-top: 0;
+  text-align: center; 
+  padding: 30px; 
+  border-radius: 0 0 20px 20px;
+  background: #e9bf92;
+}
+
+/** CLASS SECTION **/
+.section {
+  padding: 0;
+}
+
+/** GALERIE **/
+.gallery {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 10px;
+}
+
+.gallery img {
+  max-height: 300px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  cursor: pointer;
+}
+
+.gallery-spacer {
+  flex: 0 ;
+}
+
+/** VIZUALIZACE **/
+.vizualizace-h2{
+  padding: 20px;
+  margin-bottom: 15px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 60px;
+  /*background: #525252;*/
+  /*background: #be7d38b2;*/
+  background: linear-gradient(24deg, #5a3921, #a8642c);
+  text-align: center;
+  text-decoration: underline;
+}
+
+/** NABIDKA **/
+.nabidka-h1{ 
+  padding: 20px;
+  padding-top: 15px;
+  margin-bottom: 0;
+  color: #fff;
+  font-weight: bold;
+  font-size: 60px;
+  /*background: #525252;*/
+  /*background: linear-gradient(20deg, rgb(182, 112, 7), rgba(230, 133, 23, 0.712));*/
+  background: linear-gradient(80deg, #5a3921, #a8642c);
+  text-align: center;
+  text-decoration: underline;
+}
+
+.nabidka-p{
+  color: #000;
+  font-size: 1.2rem; 
+  max-width: 800px; 
+  margin-top: 0;
+  margin-bottom: 25px;
+  text-align: left; 
+  padding: 20px; 
+  font-weight: bold;
+  border-radius: 20px;
+  background: #e9bf92;
+  box-shadow: 0 2px 9px #000;
+}
+
+.nabidka-h3{
+  color: #000;
+  font-size: 1.5rem; 
+  max-width: 800px; 
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center; 
+  padding: 10px; 
+  font-weight: bold;
+  border-radius: 20px;
+  background: #e9bf92;
+}
+
+.nabidka-ul{
+  color: #000;
+  font-size: 1rem; 
+  max-width: 800px; 
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: left; 
+  padding: 10px; 
+  padding-left: 25px;
+  padding-top: 5px;
+  font-weight: bold;
+  border-radius: 0 0 20px 20px;
+  background: #e9bf92;
+}
+
+.nabidka-li{
+  margin-top: 5px;
+  padding-bottom: 5px;
+}
+
+/** VELIKOSTI **/
+.small{
+  display: inline;
+  margin-left: 13px;
+  margin-bottom: 5px;
+  padding-top: 3.2px;
+  padding-bottom: 3.2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  border: 1px solid #000;
+  border-radius: 3.5px;
+}
+
+.large{
+  display: inline;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  padding-top: 3.2px;
+  padding-bottom: 3.2px;
+  padding-left: 6px;
+  padding-right: 6px;
+  border: 1px solid #000;
+  border-radius: 3.5px;
+}
+
+.xl{
+  display: inline;
+  margin-left: 22.5px;
+  padding-top: 3.2px;
+  padding-bottom: 3.2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid #000;
+  border-radius: 3.5px;
+}
+
+/** TABULKA **/
+.table-section {
+  background: #e9bf92;
+  border-radius: 12px;
+  padding: 2rem;
+  padding-bottom: 1.3rem;
+  overflow-x: auto;
+  font-weight: bold;
+  box-shadow: 0 3px 11px #000;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  border: 1px solid #000;
+  padding: 1rem;
+  text-align: center;
+}
+
+.nabidka-th-text-center{
+  color: red;
+}
+
+.nabidka-th-text-right{
+  color: green;
+}
+
+td:nth-child(1){
+  color: #000;
+}
+
+td:nth-child(2) {
+  color: red;
+}
+
+td:nth-child(3) {
+  color: green;
+}
+
+.tabulka-p1{
+  color: #000;
+  font-weight: bold;
+}
+
+.tabulka-p2{
+  color: #000;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/** DUVODY **/
+#duvody{
+  /*background: linear-gradient(45deg, rgba(0, 0, 0, 0.507), rgb(172, 122, 29));*/
+  background: linear-gradient(135deg, #e3b575, #a8642c);
+  padding-bottom: 50px;
+}
+
+.toggle-reasons-btn {
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reasons, .how-it-works {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.reason, .step {
+  background: #000;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.reason-h2{
+  padding: 20px;
+  margin-bottom: 15px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 60px;
+  /*background: #525252;*/
+  /*background: linear-gradient(20deg, rgb(182, 112, 7), rgba(230, 133, 23, 0.712));*/
+  background: linear-gradient(15deg, #5a3921, #a8642c);
+  /*background: #5a3921;*/
+  text-align: center;
+  text-decoration: underline;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+}
+
+.reason-card {
+  /*background: linear-gradient(135deg, #e9bf92, #fce3c0);*/
+  background: linear-gradient(135deg, #f0c899, #e3b575);
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  /*color: #333;*/
+  color: #000;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reason-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.reasons-text {
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 1rem;
+  background: #e9bf92;
+  padding: 1.5rem 2rem;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  color: #000;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+/** PREZENTACE **/
+.presentation-h2{
+  padding: 20px;
+  margin-bottom: 15px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 60px;
+  /*background: #525252;*/
+  /*background: linear-gradient(20deg, rgb(160, 107, 28), rgba(151, 94, 29, 0.712));*/
+  background: linear-gradient(1deg, #5a3921, #a8642c);
+  text-align: center;
+  text-decoration: underline;
+}
+
+/** KONTAKT **/
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  color: black;
+}
+
+form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+form input, form textarea {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: none;
+  background: #333;
+  color: white;
+  cursor: pointer;
+}
+
+#map {
+  flex: 1;
+  height: 400px;
+  border-radius: 10px;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/** PATICKA **/
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+/*DOCASNE*/
+.how-img{
+  width: 30px;
+}
