@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/aboutus.css">
-  <link rel="stylesheet" href="jq/aboutus.css">
-  <link rel="icon" href="img/icon.png" type="icon">
+  <link rel="stylesheet" href="jq/aboutus.cs">
+  <link rel="icon" href="img/icon.png" type="imag/png">
   <title>Samoobslužný obchůdek</title>
 </head>
 <body>
@@ -149,20 +149,27 @@
 </section>
 
 <!--KONTAKT-->
+<h2 class="contact-h2">Kontakt</h2>
 <section class="section" id="kontakt">
-  <h2>Kontakt</h2>
-    <p>Vyzkoušejte si náš obchůdek osobně přímo v Čavisově<br>
-    Pokud nás chcete kontaktovat, použijte formulář, nebo rovnou napište na náš email <strong>info@samozka.cz</strong><br>
-    nebo na telefonu <strong>Tel: 732 516 165</strong></p>
-  <div class="contact">
-    <form>
-      <input type="text" placeholder="Jméno" required>
-      <input type="email" placeholder="E-mail" required>
-      <textarea rows="5" placeholder="Vaše zpráva"></textarea>
+
+  <p class="contact-p">
+    Vyzkoušejte si náš obchůdek osobně přímo v Čavisově.<br>
+    Pokud nás chcete kontaktovat, použijte formulář, nebo rovnou napište na náš email <a href="mailto:info@samozka.cz">info@samozka.cz</a> nebo na telefonu <strong>Tel: 732 516 165</strong>.
+  </p>
+
+  <div class="kontakt__wrapper">
+    <form class="kontakt__form" action="mail.php" method="POST">
+      <input type="text" name="name" placeholder="Jméno a příjmení">
+      <input type="email" name="email" placeholder="Email">
+      <textarea name="message" cols="15" rows="10"></textarea>
       <button type="submit">Odeslat</button>
     </form>
-    <div id="map">
-      <p>Mapa s body umístění obchůdků zde.</p>
+
+    <div class="kontakt__map">
+      <div id="map">
+        <!-- Tady přijde mapa -->
+        <p>Zde bude mapa s body</p>
+      </div>
     </div>
   </div>
 </section>
