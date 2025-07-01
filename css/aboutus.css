@@ -408,12 +408,12 @@ td:nth-child(3) {
 }
 
 /** JAK TO FUNGUJE **/
-#jak-funguje{
-  /*background: linear-gradient(135deg, #e3b575, #a8642c);*/
+#jak-funguje {
   background:
-  linear-gradient(rgba(190, 155, 78, 0.5), rgba(0, 0, 0, 0.5)),
-  url('../abim/wood_background.jpg') no-repeat center/cover;
-
+    linear-gradient(rgba(190, 155, 78, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../abim/wood_background.jpg') no-repeat center/cover;
+  padding-bottom: 0 !important;   /* zmenší dolní okraj */
+  margin-bottom: 0 !important;       /* odstraní mezeru mezi sekcemi */
 }
 
 .funkcnost-h2 {
@@ -474,6 +474,7 @@ td:nth-child(3) {
   text-align: center;
   padding: 6rem 1rem 2rem;
   color: white;
+  margin-top: 0;
 }
 .contact-h2 {
   padding: 20px;
@@ -562,34 +563,7 @@ td:nth-child(3) {
   align-items: center;
 }
 
-#map {
-  width: 40rem;
-  height: 20rem;
-  border-radius: 12px;
-  background: #e0e0e0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #555;
-  font-style: italic;
-}
-
-/* Responsivní zobrazení */
-@media screen and (max-width: 768px) {
-  .kontakt__wrapper {
-    flex-direction: column;
-  }
-
-  .kontakt__form,
-  .kontakt__map {
-    flex: 1 1 100%;
-  }
-}
-
-/** PATICKA **/
-footer {
-  background: #222;
-  color: white;
-  text-align: center;
-  padding: 2rem 1rem;
+#map iframe{
+  border-radius: 15px;
+  overflow: hidden;
 }
