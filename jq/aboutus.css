@@ -1,3 +1,60 @@
+/* Responsivní zobrazení */
+@media screen and (max-width: 768px) {
+  #kontakt {
+    padding: 4rem 1rem;
+  }
+
+  .kontakt__form {
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
+  }
+
+  .kontakt__map iframe {
+    width: 100% !important;
+    height: 250px !important;
+  }
+
+  .kontakt__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact-h2 {
+    font-size: 45px;
+  }
+
+  .contact-p {
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  .kontakt__form {
+    gap: 0.8rem;
+  }
+
+  .kontakt__form input,
+  .kontakt__form textarea {
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+  }
+
+  .kontakt__form button {
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+  }
+}
+
+/** PATICKA **/
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
 @media (max-width: 990px) {
   .nav-links {
     position: absolute;
@@ -53,7 +110,6 @@
   }
 }
 
-/* tlačítko na "vice/mene duvodu" */
 @media (max-width: 510px) {
   #toggleReasonsBtnTop {
     display: block;
@@ -70,13 +126,18 @@
   }
 
   .how-toggle-container {
-    display: block;
     text-align: center;
-    margin: 1rem 0;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;  /* nebo 2rem dle chuti */
   }
 
   .how-content.hidden-on-mobile {
     display: none;
+  }
+
+  #jak-funguje {
+    padding-bottom: 4rem;
+    min-height: 300px; /* přidá výšku, i když je obsah skrytý */
   }
 }
 
