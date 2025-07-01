@@ -1,569 +1,170 @@
-/** CSS STRANKY **/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
-  scroll-behavior: smooth;
+/* Responsivní zobrazení */
+@media screen and (max-width: 768px) {
+  #kontakt {
+    padding: 4rem 1rem;
+  }
+
+  .kontakt__form {
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
+  }
+
+  .kontakt__map iframe {
+    width: 100% !important;
+    height: 250px !important;
+  }
+
+  .kontakt__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-body {
-  background: linear-gradient(135deg, #e3b575, #a8642c);
-  color: #333;
+@media screen and (max-width: 480px) {
+  .contact-h2 {
+    font-size: 45px;
+  }
+
+  .contact-p {
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  .kontakt__form {
+    gap: 0.8rem;
+  }
+
+  .kontakt__form input,
+  .kontakt__form textarea {
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+  }
+
+  .kontakt__form button {
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+  }
 }
 
-/** ZAKLADNI NASTAVENI PRO H1 H2 H3 **/
-h1, h2, h3 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-/** NAVIGACE **/
-.navbar {
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 0 0 30px 30px;
-  padding: 12px 20px 16px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-}
-
-.nav-logo {
-  height: 43px;
-  object-fit: contain;
-  transition: all 0.2s ease;
-}
-
-.nav-logo:hover {
-  transform: scale(1.1);
-}
-
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 0;
-}
-
-.nav-links a {
+/** PATICKA **/
+footer {
+  background: #222;
   color: white;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.5s ease;
-  font-size: 18px;
-}
-
-.nav-links a:hover {
-  font-size: larger;
-  border-radius: 20px;
-  background: linear-gradient(135deg, rgba(240, 177, 82, 1), rgb(0, 0, 0, 0.5));
-  color: #fff;
-  padding: 10px;
-}
-
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.hamburger img {
-  height: 30px;
-}
-
-/** Nastaveni pro sekci hero, nabidka, kontakt **/
-.hero, #nabidka {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   text-align: center;
-  padding: 6rem 1rem 2rem;
-  background: 
-  linear-gradient(rgba(190, 155, 78, 0.5), rgba(0, 0, 0, 0.5)),
-  url('../abim/wood_background.jpg') no-repeat center/cover;
-  color: white;
-}
-
-/** KRATKY POPIS POD NAVIGACI **/
-.hero-undertext{
-  color: #000;
-  font-size: 1.5rem; 
-  margin-top: 30px;
-  margin-bottom: 0;
-  border-radius: 20px 20px 0 0;
-  padding: 20px;
-  background: #e9bf92;
-}
-
-.hero-logo{
-  margin-top: 42px;
-  width: 700px;
-}
-
-.hero-p{
-  color: #000;
-  font-size: 1.2rem; 
-  max-width: 800px; 
-  margin-top: 0;
-  text-align: center; 
-  padding: 30px; 
-  border-radius: 0 0 20px 20px;
-  background: #e9bf92;
-}
-
-/** CLASS SECTION **/
-.section {
-  padding: 0;
-}
-
-/** GALERIE **/
-.gallery {
-  display: flex;
-  overflow-x: auto;
-  gap: 1rem;
-  -webkit-overflow-scrolling: touch;
-  margin-bottom: 10px;
-}
-
-.gallery img {
-  max-height: 300px;
-  border-radius: 10px;
-  flex-shrink: 0;
-  scroll-snap-align: start;
-  cursor: pointer;
-}
-
-.gallery-spacer {
-  flex: 0 ;
-}
-
-/** VIZUALIZACE **/
-#vizualizace{
-  background: linear-gradient(135deg, rgb(0, 0, 0, 0.4), #f18c20);
-}
-
-.vizualizace-h2{
-  padding: 20px;
-  margin-bottom: 15px;
-  color: #fff;
-  font-weight: bold;
-  font-size: 60px;
-  /*background: #525252;*/
-  /*background: #be7d38b2;*/
-  background: linear-gradient(24deg, #5a3921, #a8642c);
-  text-align: center;
-  text-decoration: underline;
-}
-
-/** NABIDKA **/
-.nabidka-h1{ 
-  padding: 20px;
-  padding-top: 15px;
-  margin-bottom: 0;
-  color: #fff;
-  font-weight: bold;
-  font-size: 60px;
-  /*background: #525252;*/
-  /*background: linear-gradient(20deg, rgb(182, 112, 7), rgba(230, 133, 23, 0.712));*/
-  background: linear-gradient(80deg, #5a3921, #a8642c);
-  text-align: center;
-  text-decoration: underline;
-}
-
-.nabidka-p{
-  color: #000;
-  font-size: 1.2rem; 
-  max-width: 800px; 
-  margin-top: 0;
-  margin-bottom: 25px;
-  text-align: left; 
-  padding: 20px; 
-  font-weight: bold;
-  border-radius: 20px;
-  background: #e9bf92;
-  box-shadow: 0 2px 9px #000;
-}
-
-.nabidka-h3{
-  color: #000;
-  font-size: 1.5rem; 
-  max-width: 800px; 
-  margin-top: 0;
-  margin-bottom: 0;
-  text-align: center; 
-  padding: 10px; 
-  font-weight: bold;
-  border-radius: 20px;
-  background: #e9bf92;
-}
-
-.nabidka-ul{
-  color: #000;
-  font-size: 1rem; 
-  max-width: 800px; 
-  margin-top: 0;
-  margin-bottom: 15px;
-  text-align: left; 
-  padding: 10px; 
-  padding-left: 25px;
-  padding-top: 5px;
-  font-weight: bold;
-  border-radius: 0 0 20px 20px;
-  background: #e9bf92;
-}
-
-.nabidka-li{
-  margin-top: 5px;
-  padding-bottom: 5px;
-}
-
-/** VELIKOSTI **/
-.small{
-  display: inline;
-  margin-left: 13px;
-  margin-bottom: 5px;
-  padding-top: 3.2px;
-  padding-bottom: 3.2px;
-  padding-left: 4px;
-  padding-right: 4px;
-  border: 1px solid #000;
-  border-radius: 3.5px;
-}
-
-.large{
-  display: inline;
-  margin-left: 10px;
-  margin-bottom: 5px;
-  padding-top: 3.2px;
-  padding-bottom: 3.2px;
-  padding-left: 6px;
-  padding-right: 6px;
-  border: 1px solid #000;
-  border-radius: 3.5px;
-}
-
-.xl{
-  display: inline;
-  margin-left: 22.5px;
-  padding-top: 3.2px;
-  padding-bottom: 3.2px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border: 1px solid #000;
-  border-radius: 3.5px;
-}
-
-/** TABULKA **/
-.table-section {
-  background: #e9bf92;
-  border-radius: 12px;
-  padding: 2rem;
-  padding-bottom: 1.3rem;
-  overflow-x: auto;
-  font-weight: bold;
-  box-shadow: 0 3px 11px #000;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-}
-
-th, td {
-  border: 1px solid #000;
-  padding: 1rem;
-  text-align: center;
-}
-
-.nabidka-th-text-center{
-  color: red;
-}
-
-.nabidka-th-text-right{
-  color: green;
-}
-
-td:nth-child(1){
-  color: #000;
-}
-
-td:nth-child(2) {
-  color: red;
-}
-
-td:nth-child(3) {
-  color: green;
-}
-
-.tabulka-p1{
-  color: #000;
-  font-weight: bold;
-}
-
-.tabulka-p2{
-  color: #000;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-/** DUVODY **/
-#duvody{
-  /*background: linear-gradient(45deg, rgba(0, 0, 0, 0.507), rgb(172, 122, 29));*/
-  background: linear-gradient(135deg, #e3b575, #a8642c);
-  padding-bottom: 50px;
-}
-
-.toggle-reasons-btn {
-  cursor: pointer;
-  font-size: 1.1rem;
-  font-weight: bold;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.reasons, .how-it-works {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-}
-
-.reason, .step {
-  background: #000;
-  border-radius: 10px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  text-align: center;
-}
-
-.reason-h2{
-  padding: 20px;
-  margin-bottom: 15px;
-  color: #fff;
-  font-weight: bold;
-  font-size: 60px;
-  /*background: #525252;*/
-  /*background: linear-gradient(20deg, rgb(182, 112, 7), rgba(230, 133, 23, 0.712));*/
-  background: linear-gradient(15deg, #5a3921, #a8642c);
-  /*background: #5a3921;*/
-  text-align: center;
-  text-decoration: underline;
-}
-
-.reasons-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
   padding: 2rem 1rem;
 }
 
-.reason-card {
-  /*background: linear-gradient(135deg, #e9bf92, #fce3c0);*/
-  background: linear-gradient(135deg, #f0c899, #e3b575);
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  padding: 1.5rem;
-  font-size: 1.1rem;
-  font-weight: bold;
-  /*color: #333;*/
-  color: #000;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+@media (max-width: 990px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(0,0,0,0.95);
+    flex-direction: column;
+    padding: 1rem 2rem;
+    border-radius: 0 0 0 20px;
+    display: none;
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .navbar {
+    justify-content: space-between;
+    padding-right: 10px;
+    gap: 0;
+  }
+  
+  .nav-logo {
+    height: 30px !important;
+  }
+  
+  .hamburger {
+    position: relative;
+    right: 0;
+    display: block;
+  }  
+  
+  .hero-logo{
+    width: 90%;
+    max-width: 400px;
+    margin-top: 20px;
+  }
+  
+  .nav-links a:hover {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0s ease;
+    font-size: 18px;
+    border-radius: 0;
+    background: none;
+    padding: 0;
+  }
+
+  .gal{
+    width: 70%;
+    max-width:400px;
+  }
 }
 
-.reasons-text {
-  max-width: 900px;
-  margin: 0 auto;
-  margin-top: 1rem;
-  background: #e9bf92;
-  padding: 1.5rem 2rem;
-  border-radius: 20px;
-  font-size: 1.1rem;
-  color: #000;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-  text-align: center;
+@media (max-width: 510px) {
+  #toggleReasonsBtnTop {
+    display: block;
+    margin: 1rem auto;
+    max-width: 300px;
+  }
+
+  #reasonsWrapper {
+    display: none;
+  }
+
+  #reasonsWrapper.show {
+    display: block;
+  }
+
+  .how-toggle-container {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;  /* nebo 2rem dle chuti */
+  }
+
+  .how-content.hidden-on-mobile {
+    display: none;
+  }
+
+  #jak-funguje {
+    padding-bottom: 4rem;
+    min-height: 300px; /* přidá výšku, i když je obsah skrytý */
+  }
 }
 
-/** PREZENTACE **/
-.presentation-h2{
-  padding: 20px;
-  margin-bottom: 15px;
-  color: #fff;
-  font-weight: bold;
-  font-size: 60px;
-  /*background: #525252;*/
-  /*background: linear-gradient(20deg, rgb(160, 107, 28), rgba(151, 94, 29, 0.712));*/
-  background: linear-gradient(1deg, #5a3921, #a8642c);
-  text-align: center;
-  text-decoration: underline;
+@media (min-width: 511px) {
+  #toggleReasonsBtnTop {
+    display: none;
+  }
+
+  #reasonsWrapper {
+    display: block !important;
+  }
+
+  .how-toggle-container {
+    display: none !important;
+  }
+
+  .how-content {
+    display: grid !important;
+  }
 }
 
-/** JAK TO FUNGUJE **/
-#jak-funguje {
-  background:
-    linear-gradient(rgba(190, 155, 78, 0.5), rgba(0, 0, 0, 0.5)),
-    url('../abim/wood_background.jpg') no-repeat center/cover;
-  padding-bottom: 0 !important;   /* zmenší dolní okraj */
-  margin-bottom: 0 !important;       /* odstraní mezeru mezi sekcemi */
-}
-
-.funkcnost-h2 {
-  padding: 20px;
-  margin-bottom: 15px;
-  color: #fff;
-  font-weight: bold;
-  font-size: 60px;
-  background: linear-gradient(1deg, #5a3921, #a8642c);
-  text-align: center;
-  text-decoration: underline;
-}
-
-.how-it-works {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
-  justify-items: center;
-  padding: 2rem 1rem;
-}
-
-.step {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  max-width: 480px;
-  height: 120px;
-  padding: 1rem;
-  margin: 0 auto;
-  background: linear-gradient(135deg, #f0c899, #e3b575);
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  border: none;
-
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #000;
-  line-height: 1.4;
-  overflow: hidden;
-  text-align: left;
-}
-
-.step-img {
-  width: 45px;
-  height: 45px;
-  object-fit: contain;
-  margin-right: 1rem;
-  flex-shrink: 0;
-}
-
-/** KONTAKT **/
-#kontakt{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 6rem 1rem 2rem;
-  color: white;
-  margin-top: 0;
-}
-.contact-h2 {
-  padding: 20px;
-  margin-bottom: 15px;
-  color: #fff;
-  font-weight: bold;
-  font-size: 70px;
-  background: linear-gradient(1deg, #5a3921, #a8642c);
-  text-align: center;
-  text-decoration: underline;
-}
-
-/* Popis textu */
-.contact-p {
-  background: #ccc;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #000;
-  line-height: 1.4;
-}
-
-/* Layout vedle sebe */
-.kontakt__wrapper {
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: nowrap; /* přepsáno z 'wrap' */
-}
-
-/* Formulář */
-.kontakt__form {
-  width: 30rem;
-  height: 20rem;
-  flex: 1 1 50%;
-  background: linear-gradient(200deg, #c47429, #f4c79a);
-  padding: 2rem;
-  border-radius: 12px;
-  border: 1px solid #000;
-  box-shadow: 0 10px 17px rgba(0, 0, 0);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.kontakt__form input,
-.kontakt__form textarea {
-  padding: 0.8rem 1rem;
-  font-size: 1rem;
-  border: 1px solid #000;
-  border-radius: 8px;
-  background: #fff;
-  transition: border 0.2s ease;
-}
-
-.kontakt__form input:focus,
-.kontakt__form textarea:focus {
-  border-color: greenyellow;
-  outline: none;
-}
-
-.kontakt__form button {
-  background-color: #8a8484;
-  color: white;
-  font-size: 1rem;
-  padding: 0.8rem 1.2rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.kontakt__form button:hover {
-  background-color: #000;
-  color: #fff;
-}
-
-/* Mapa vedle formuláře */
-.kontakt__map {
-  flex: 1 1 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#map iframe{
-  border-radius: 15px;
-  overflow: hidden;
+@media (max-width: 678px) {
+  .vizualizace-h2,
+  .nabidka-h1,
+  .reason-h2,
+  .presentation-h2,
+  .funkcnost-h2 {
+    font-size: 55px !important;
+  }
 }
