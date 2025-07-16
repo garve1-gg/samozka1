@@ -193,6 +193,37 @@
       content: url('img/speakerF.png');
     }
 
+    #qaList strong, 
+    #qaList p {
+      white-space: normal;           /* umožní zalomení textu */
+      word-wrap: break-word;         /* zalomí dlouhá slova */
+      overflow-wrap: break-word;     /* lepší kompatibilita */
+      max-width: 100%;               /* omezí šířku na rodiče */
+      display: block;                /* aby šlo pod sebe */
+      margin: 0 0 10px 0;            /* mezera mezi otázkou a odpovědí */
+    }
+
+    #qaList {
+      word-break: break-word;
+      white-space: normal;
+    }
+
+    #aktuality.content-box {
+      width: 30%;       /* původně 60%, teď o 50 % menší */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    #aktualityImg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
 
     @media (max-width: 600px) {
       .bubble-container {
@@ -271,13 +302,34 @@
   </div>
 
   <div id="pozadavky" class="content-box">
-    <h2>Napište zprávu</h2>
-    <input type="text" id="msgInput" placeholder="Zpráva...">
-    <button onclick="sendMessage()">Odeslat</button>
+    <div class="category-buttons">
+      <button onclick="toggleSubsection('formSection')">Formulář</button>
+      <button onclick="toggleSubsection('qaSection')">Q&A</button>
+    </div>
+
+    <div id="formSection" style="display: block;">
+      <h2>Napište zprávu</h2>
+      <select id="obecSelect" required>
+        <option value="">-- Vyberte obec --</option>
+        <option value="Čavisov">Čavisov</option>
+        <option value="Pržno">Pržno</option>
+        <option value="Nadějov">Nadějov</option>
+        <option value="Pletený Újezd">Pletený Újezd</option>
+        <option value="Dolní Benešov Zábřeh">Dolní Benešov Zábřeh</option>
+        <option value="Jakartovice">Jakartovice</option>
+      </select>
+      <input type="text" id="msgInput" placeholder="Zpráva...">
+      <button onclick="sendMessage()">Odeslat</button>
+    </div>
+
+    <div id="qaSection" style="display: none;">
+      <h2>Nejčastější dotazy</h2>
+      <div id="qaList"></div>
+    </div>
   </div>
 
   <div id="aktuality" class="content-box">
-    <p>Aktuality budou doplněny.</p>
+    <img id="aktualityImg" style="max-width: 100%; height: auto;" />
   </div>
 
   <script>
@@ -285,9 +337,21 @@
       document.querySelectorAll('.content-box').forEach(el => el.style.display = 'none');
       document.getElementById(id).style.display = 'block';
 
-      if (id === 'nabidka') {
-        loadCategories(); // načte kategorie pouze při otevření „Nabídky“
-      } 
+      if (id === 'kategorie') {
+        loadCategories();
+      }
+
+      if (id === 'pozadavky') {
+        // Zajistí načtení Q&A i po přechodu z jiné sekce
+        const isQAVisible = document.getElementById("qaSection").style.display !== "none";
+        if (isQAVisible) {
+          loadQA();
+        }
+      }
+
+      if (id === 'aktuality') {
+        loadAktualityImage();
+      }
     }
 
     const firebaseConfig = {
@@ -336,24 +400,65 @@
       });
     }
 
+    function toggleSubsection(id) {
+      document.getElementById("formSection").style.display = "none";
+      document.getElementById("qaSection").style.display = "none";
+      document.getElementById(id).style.display = "block";
+
+      if (id === "qaSection") {
+        loadQA();
+      }
+    }
+
+    function loadQA() {
+      const container = document.getElementById("qaList");
+      container.innerHTML = "";
+      db.ref("faq").once("value").then(snapshot => {
+        snapshot.forEach(child => {
+          const entry = child.val();
+          container.innerHTML += `
+            <strong>${entry.otazka}</strong><br>
+            <p>${entry.odpoved}</p><hr>`;
+        });
+      });
+    }
+
     function sendMessage() {
-      const input = document.getElementById("msgInput");
-      const msg = input.value.trim();
-      if (!msg) {
-        alert("Zpráva nesmí být prázdná.");
+      const msgInput = document.getElementById("msgInput");
+      const msg = msgInput.value.trim();
+
+      const obecSelect = document.getElementById("obecSelect");
+      const obec = obecSelect.value;
+
+      if (!msg || !obec) {
+        alert("Zpráva ani obec nesmí být prázdné.");
         return;
       }
 
-      db.ref("messages").push({ text: msg, solved: false })
+      db.ref("messages").push({ text: msg, obec: obec, solved: false })
         .then(() => {
           alert("Zpráva byla úspěšně odeslána.");
-          input.value = "";
+          msgInput.value = "";
+          obecSelect.value = "";
         })
         .catch(error => {
           console.error("Chyba při odesílání zprávy:", error);
           alert("Zpráva nebyla odeslána. Zkontrolujte připojení k databázi.");
         });
     }
+
+  function loadAktualityImage() {
+    const img = document.getElementById("aktualityImg");
+    db.ref("aktuality").once("value").then(snapshot => {
+      const data = snapshot.val();
+      if (data && data.imageData && data.ext) {
+        img.src = `data:image/${data.ext.replace('.', '')};base64,${data.imageData}`;
+      } else {
+        img.alt = "Aktuality zatím nejsou k dispozici.";
+        img.src = "";
+      }
+    });
+  }
 
     // Inicializace
     window.onload = () => {
