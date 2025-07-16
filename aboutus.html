@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/aboutus.css">
-  <link rel="stylesheet" href="jq/aboutus.css">
+  <link rel="stylesheet" href="jq/aboutus.cs">
   <link rel="icon" href="img/icon.png" type="imag/png">
   <title>Samoobslužný obchůdek</title>
 </head>
@@ -125,7 +125,22 @@
     <img src="abim/foto/real2.jpg" alt="Reálná foto 2" onclick="openLightbox(this.src)" class="gal">
     <img src="abim/foto/real3.jpg" alt="Reálná foto 3" onclick="openLightbox(this.src)" class="gal">
     <img src="abim/foto/real4.jpg" alt="Reálná foto 4" onclick="openLightbox(this.src)" class="gal">
-    <img src="abim/foto/real5.jpg" alt="Reálná foto 5" onclick="openLightbox(this.src)" class="gal galy">
+    <img src="abim/foto/real5.jpg" alt="Reálná foto 5" onclick="openLightbox(this.src)" class="gal">
+    <img src="abim/foto/real6.jpg" alt="Reálná foto 4" onclick="openLightbox(this.src)" class="gal">
+    <img src="abim/foto/real7.jpg" alt="Reálná foto 4" onclick="openLightbox(this.src)" class="gal">
+    <img src="abim/foto/real8.jpg" alt="Reálná foto 4" onclick="openLightbox(this.src)" class="gal">
+    <img src="abim/foto/real9.jpg" alt="Reálná foto 4" onclick="openLightbox(this.src)" class="gal">
+    <img src="abim/foto/real10.jpg" alt="Reálná foto 4" onclick="openLightbox(this.src)" class="gal">
+    <img src="abim/foto/real11.jpg" alt="Reálná foto 4" onclick="openLightbox(this.src)" class="gal">
+    <img src="abim/foto/real12.jpg" alt="Reálná foto 4" onclick="openLightbox(this.src)" class="gal">
+    <img src="abim/foto/real13.jpg" alt="Reálná foto 4" onclick="openLightbox(this.src)" class="gal">
+    <img src="abim/foto/real14.jpg" alt="Reálná foto 4" onclick="openLightbox(this.src)" class="gal">
+    <img src="abim/foto/real15.jpg" alt="Reálná foto 4" onclick="openLightbox(this.src)" class="gal">
+    <img src="abim/foto/real16.jpg" alt="Reálná foto 4" onclick="openLightbox(this.src)" class="gal">
+    <img src="abim/foto/real17.jpg" alt="Reálná foto 4" onclick="openLightbox(this.src)" class="gal">
+    <img src="abim/foto/real18.jpg" alt="Reálná foto 4" onclick="openLightbox(this.src)" class="gal">
+    <img src="abim/foto/real19.jpg" alt="Reálná foto 4" onclick="openLightbox(this.src)" class="gal">
+    <img src="abim/foto/real20.jpg" alt="Reálná foto 4" onclick="openLightbox(this.src)" class="gal galy">
     <div class="gallery-spacer"></div> <!-- Falešný prvek na konci -->
   </div>
 </section>
@@ -134,7 +149,7 @@
 <section class="section" id="jak-funguje">
   <h2 class="funkcnost-h2">Jak to funguje</h2>
   <div class="how-toggle-container">
-    <button class="reason-card toggle-reasons-btn" onclick="toggleHow()">+ více</button>
+    <button id="toggleHowBtn" class="reason-card toggle-reasons-btn" onclick="toggleHow()">+ více</button>
   </div>
   <div class="how-it-works how-content hidden-on-mobile">
     <div class="step"><img src="abim/num/one.png" alt="" class="step-img">Načti QR kód na vstupních dveřích</div>
@@ -153,12 +168,12 @@
 <section class="section" id="kontakt">
 
   <p class="contact-p">
-    Vyzkoušejte si náš obchůdek osobně přímo v Čavisově.<br>
+    <strong>Vyzkoušejte si naše obchůdky a přesvědčte se sami jak nakupování může být jednoduché kdekoliv a kdykoliv.</strong><br>
     Pokud nás chcete kontaktovat, použijte formulář, nebo rovnou napište na náš email <a href="mailto:info@samozka.cz">info@samozka.cz</a> nebo na telefonu <strong>Tel: 732 516 165</strong>.
   </p>
 
   <div class="kontakt__wrapper">
-    <form class="kontakt__form" action="https://formsubmit.co/zombiematej@gmail.com" method="POST">
+    <form class="kontakt__form" action="https://formsubmit.co/zombiematej@gmail.com" method="POST"> <!--ZMENIT NA info@samozka.cz-->
       <input type="text" name="name" placeholder="Jméno a příjmení" required>
       <input type="email" name="email" placeholder="Email" required>
       <textarea name="message" cols="15" rows="10" required></textarea>
@@ -167,7 +182,7 @@
 
     <div class="kontakt__map">
       <div id="map">
-        <iframe style="border:none" src="https://mapy.com/s/raretajuvo" width="600px" height="320px" frameborder="0"></iframe>
+        <iframe style="border:none" src="https://mapy.com/s/dusolujanu" width="600px" height="320px" frameborder="0"></iframe>
       </div>
     </div>
   </div>
@@ -281,12 +296,12 @@
 
   function toggleHow() {
     const content = document.querySelector('.how-content');
-    const button = document.querySelector('.how-toggle-btn');
+    const button = document.getElementById('toggleHowBtn');
 
-    if (window.innerWidth <= 510) {
-      content.classList.toggle('hidden-on-mobile');
-      button.textContent = content.classList.contains('hidden-on-mobile') ? '+ více' : '− méně';
-    }
+    const isHidden = content.classList.toggle('hidden-on-mobile');
+
+    // Změní text podle viditelnosti
+    button.textContent = isHidden ? '+ více' : '− méně';
   }
 
   // Zobrazit/skrýt tlačítko pro mobil
